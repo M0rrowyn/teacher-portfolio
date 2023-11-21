@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  Home
+  Feedback
 </template>
 
 <style lang="scss" scoped>

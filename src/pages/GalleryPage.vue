@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  Home
+  Gallery
 </template>
 
 <style lang="scss" scoped>

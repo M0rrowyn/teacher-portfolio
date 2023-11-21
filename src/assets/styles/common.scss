@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  background-color: $background-color;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $base-font, $fallback-fonts;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $text;
+}
+
+a {
+  color: inherit;
+}

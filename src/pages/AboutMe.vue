@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  Home
+  About Me
 </template>
 
 <style lang="scss" scoped>

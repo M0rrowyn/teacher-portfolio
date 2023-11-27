@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  background-color: $background-color;
 }
 
 html,
@@ -10,6 +9,7 @@ body {
   font-family: $base-font, $fallback-fonts;
   font-size: 16px;
   line-height: 1.4;
+  background-color: $background-color;
   color: $text;
 }
 

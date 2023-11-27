@@ -1,7 +1,14 @@
 $base-font: 'probapro';
 $fallback-fonts: 'Arial', 'sans-serif';
-$background-color: #E4E4E4;
-$light-color: #FFFFFF;
-$accent-color: #FBDD37;
-$text: #373D43;
+$background-color: #e4e4e4;
+$light-color: #ffffff;
+$accent-color: #fbdd37;
+$text: #373d43;
 $text-muted: #889099;
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1140px
+);

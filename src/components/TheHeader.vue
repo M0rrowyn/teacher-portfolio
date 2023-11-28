@@ -10,7 +10,7 @@ const toggleMobileNav = () => {
 
 <template>
   <header class="header">
-    <div class="header__content">
+    <div class="header__content container">
       <img
         class="header__content__logo"
         src="../assets/images/logo.png"
@@ -84,12 +84,13 @@ const toggleMobileNav = () => {
   color: $text;
   transition: 0.5s ease all;
 
+
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     padding: 56px 24px;
   }

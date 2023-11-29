@@ -1,7 +1,7 @@
 <script setup>
 import Button from 'primevue/button';
 
-import { ref, defineProps } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps(['customClass']);
 

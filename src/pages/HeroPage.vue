@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import CustomButton from '../components/CustomButton.vue';
+</script>
 
 <template>
   <section class="hero">
@@ -12,9 +14,13 @@
         quis. Nibh praesent tristique
       </p>
     </div>
-    <div class="hero__info__links container">
-      <button class="hero__info__links__btn-aboutme">About Me</button>
-      <button class="hero__info__links__btn-contact">Contact</button>
+    <div class="hero__info__btn container">
+      <router-link :to="{ name: 'aboutMe' }">
+        <CustomButton label="About me" customClass="about-me-btn" />
+      </router-link>
+      <router-link :to="{ name: 'contact' }">
+        <CustomButton label="Contact" customClass="contact-btn" />
+      </router-link>
     </div>
   </section>
 </template>
@@ -86,7 +92,7 @@
     }
   }
 
-  &__info__links {
+  &__info__btn {
     display: flex;
     gap: 20px;
     padding: 0px 24px;
@@ -99,44 +105,48 @@
       padding: 0px 12px;
       margin: 0 auto;
     }
+  }
+  .about-me-btn {
+    font-family: $base-font;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    cursor: pointer;
+    padding: 18px 60px;
+    border: none;
+    background-color: $accent-color;
+    transition: color 0.4s linear;
 
-    &__btn-aboutme {
-      font-family: $base-font;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-align: center;
-      cursor: pointer;
-      padding: 18px 60px;
-      border: none;
-      background-color: $accent-color;
-
-      @media screen and (max-width: map-get($breakpoints, 'md')) {
-        width: 100%;
-        padding: 12px 30px;
-        margin: 0 auto 5px;
-      }
+    &:hover {
+      color: #000;
     }
 
-    &__btn-contact {
-      font-family: $base-font;
-      cursor: pointer;
-      text-align: center;
-      border: none;
-      color: $text;
-      background-color: $light-color;
-      padding: 18px 108px;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: normal;
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      width: 100%;
+      padding: 12px 30px;
+      margin: 0 auto 5px;
+    }
+  }
 
-      @media screen and (max-width: map-get($breakpoints, 'md')) {
-        width: 100%;
-        padding: 12px 30px;
-        margin: 0 auto 5px;
-      }
+  .contact-btn {
+    font-family: $base-font;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    color: $text;
+    background-color: $light-color;
+    padding: 18px 108px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      width: 100%;
+      padding: 12px 30px;
+      margin: 0 auto 5px;
     }
   }
 }

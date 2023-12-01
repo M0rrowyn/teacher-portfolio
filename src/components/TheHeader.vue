@@ -36,7 +36,7 @@ const toggleMobileNav = () => {
             <router-link :to="{ name: 'gallery' }">Gallery</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'feedback' }">Feedback</router-link>
+            <router-link :to="{ name: 'workExamples' }">Work Examples</router-link>
           </li>
           <li>
             <router-link :to="{ name: 'contact' }">Contact</router-link>
@@ -61,7 +61,7 @@ const toggleMobileNav = () => {
               <router-link :to="{ name: 'gallery' }">Gallery</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'feedback' }">Feedback</router-link>
+              <router-link :to="{ name: 'workExamples' }">Work Examples</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'contact' }">Contact</router-link>

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HeroPage from '../pages/HeroPage.vue';
 import AboutMe from '../pages/AboutMe.vue';
 import GalleryPage from '../pages/GalleryPage.vue';
-import FeedbackPage from '../pages/FeedbackPage.vue';
+import WorkExamples from '../pages/WorkExamples.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,9 +23,9 @@ const router = createRouter({
       component: GalleryPage
     },
     {
-      path: '/feedback',
-      name: 'feedback',
-      component: FeedbackPage
+      path: '/work-examples',
+      name: 'workExamples',
+      component: WorkExamples
     },
     {
       path: '/contact',

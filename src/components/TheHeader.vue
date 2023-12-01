@@ -19,7 +19,7 @@ const toggleMobileNav = () => {
       <nav v-if="!mobile" class="header__nav__content">
         <ul class="header__nav__items">
           <li>
-            <router-link :to="{ name: 'hero-page' }">
+            <router-link :to="{ name: 'main-page' }">
               <img
                 class="header__nav__icon"
                 src="../assets/images/geometric shapes-img.png"
@@ -30,16 +30,16 @@ const toggleMobileNav = () => {
             >
           </li>
           <li>
-            <router-link :to="{ name: 'aboutMe' }">About me</router-link>
+            <router-link to="/#about-me">About me</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'gallery' }">Gallery</router-link>
+            <router-link to="/#gallery">Gallery</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'workExamples' }">Work Examples</router-link>
+            <router-link to="/#work-examples">Work Examples</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'contact' }">Contact</router-link>
+            <router-link to="/#contact">Contact</router-link>
           </li>
         </ul>
         <div class="header__nav__burger">
@@ -52,19 +52,19 @@ const toggleMobileNav = () => {
         <transition name="header__nav__mobile">
           <ul v-show="mobile" class="header__nav__mobile__dropdown">
             <li>
-              <router-link :to="{ name: 'hero-page' }"> Home</router-link>
+              <router-link :to="{ name: 'main-page' }"> Home</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'aboutMe' }">About me</router-link>
+              <router-link to="/#about-me">About me</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'gallery' }">Gallery</router-link>
+              <router-link to="/#gallery">Gallery</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'workExamples' }">Work Examples</router-link>
+              <router-link to="/#work-examples">Work Examples</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'contact' }">Contact</router-link>
+              <router-link to="/#contact">Contact</router-link>
             </li>
           </ul>
         </transition>
@@ -83,7 +83,6 @@ const toggleMobileNav = () => {
   background: $background-color;
   color: $text;
   transition: 0.5s ease all;
-
 
   &__content {
     display: flex;

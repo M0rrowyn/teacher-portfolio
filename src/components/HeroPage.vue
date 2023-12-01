@@ -15,10 +15,10 @@ import CustomButton from '../components/CustomButton.vue';
       </p>
     </div>
     <div class="hero__info__btn container">
-      <router-link :to="{ name: 'aboutMe' }">
+      <router-link to="#about-me">
         <CustomButton label="About me" customClass="about-me-btn" />
       </router-link>
-      <router-link :to="{ name: 'contact' }">
+      <router-link to="#contact">
         <CustomButton label="Contact" customClass="contact-btn" />
       </router-link>
     </div>
@@ -120,7 +120,7 @@ import CustomButton from '../components/CustomButton.vue';
     transition: color 0.4s linear;
 
     &:hover {
-      color: #000;
+      background-color: $background-color;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {
@@ -142,6 +142,11 @@ import CustomButton from '../components/CustomButton.vue';
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    transition: color 0.4s linear;
+
+    &:hover {
+      background-color: $background-color;
+    }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {
       width: 100%;

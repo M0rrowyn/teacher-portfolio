@@ -117,10 +117,26 @@ import CustomButton from '../components/CustomButton.vue';
     padding: 18px 60px;
     border: none;
     background-color: $accent-color;
-    transition: color 0.4s linear;
+    transition: all 0.5s linear;
 
     &:hover {
-      background-color: $light-color;
+      border-radius: 0;
+      scale: 1.1;
+    }
+
+    &:after {
+      content: '';
+      background: $light-accent-color;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: -1;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {
@@ -142,10 +158,26 @@ import CustomButton from '../components/CustomButton.vue';
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    transition: color 0.4s linear;
+    transition: all 0.5s linear;
 
     &:hover {
-      background-color: $background-color;
+      border-radius: 0;
+      scale: 1.1;
+    }
+
+    &:after {
+      content: '';
+      background: $light-background-color;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: -1;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {

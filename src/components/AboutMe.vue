@@ -66,6 +66,11 @@
   &__image {
     display: block;
     width: 50%;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {
       width: 100%;

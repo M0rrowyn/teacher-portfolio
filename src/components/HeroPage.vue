@@ -120,7 +120,7 @@ import CustomButton from '../components/CustomButton.vue';
     transition: color 0.4s linear;
 
     &:hover {
-      background-color: $background-color;
+      background-color: $light-color;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {

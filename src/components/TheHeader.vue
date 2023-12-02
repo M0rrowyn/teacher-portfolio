@@ -82,7 +82,6 @@ const toggleMobileNav = () => {
   z-index: 99;
   background: $background-color;
   color: $text;
-  transition: 0.5s ease all;
 
   &__content {
     display: flex;
@@ -109,7 +108,7 @@ const toggleMobileNav = () => {
       position: relative;
       margin-right: 40px;
       padding: 12px 0;
-      transition: 0.5s ease all;
+      transition: all 0.3s;
 
       @media (min-width: map-get($breakpoints, 'xxl')) {
         max-width: map-get($breakpoints, 'xxl');
@@ -132,10 +131,12 @@ const toggleMobileNav = () => {
       li {
         a {
           text-decoration: none;
+          transition: 0.5s;
         }
 
         &:hover {
           border-bottom: 1px solid $accent-color;
+          border-top: 1px solid $accent-color;
         }
 
         &:last-child {

@@ -120,6 +120,7 @@ const toggleMobileNav = () => {
     }
 
     &__items {
+      position: relative;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -131,12 +132,13 @@ const toggleMobileNav = () => {
       li {
         a {
           text-decoration: none;
-          transition: 0.5s;
+          transition: all 0.35s ease;
         }
 
         &:hover {
-          border-bottom: 1px solid $accent-color;
-          border-top: 1px solid $accent-color;
+          border-bottom: 2px solid $accent-color;
+          border-top: 2px solid $accent-color;
+          opacity: 0.7;
         }
 
         &:last-child {
@@ -197,6 +199,8 @@ const toggleMobileNav = () => {
           align-items: center;
           list-style: none;
           font-size: 20px;
+          text-decoration: none;
+          transition: all 0.35s ease;
 
           .link {
             color: #000;

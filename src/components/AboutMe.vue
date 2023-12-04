@@ -42,8 +42,8 @@
 
 .about-me {
   display: flex;
-  padding: 0px 24px;
-  margin: 52px auto 20px;
+
+  margin: 52px auto 0;
 
   @media screen and (max-width: map-get($breakpoints, 'md')) {
     padding: 0px 12px;
@@ -53,7 +53,6 @@
   &__content {
     display: flex;
     gap: 80px;
-    max-width: 1200px;
     background-color: $light-color;
     border-radius: 10px;
 
@@ -98,7 +97,8 @@
       font-family: $base-font;
       font-size: 38px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
+      line-height: 120%;
       color: $text;
 
       @media screen and (max-width: map-get($breakpoints, 'md')) {

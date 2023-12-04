@@ -42,7 +42,6 @@
 
 .about-me {
   display: flex;
-
   margin: 52px auto 0;
 
   @media screen and (max-width: map-get($breakpoints, 'md')) {

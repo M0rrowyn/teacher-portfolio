@@ -31,6 +31,11 @@ const { image, title, description } = defineProps([
     width: 100%;
     height: auto;
     object-fit: cover;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__title {

@@ -58,7 +58,7 @@ watchEffect(() => {
   if (autoPlayEnabled.value) {
     const autoplayInterval = setInterval(() => {
       nextImage();
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(autoplayInterval);
   }

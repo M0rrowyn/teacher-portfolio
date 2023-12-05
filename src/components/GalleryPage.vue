@@ -86,7 +86,6 @@ watchEffect(() => {
             :description="
               gallery[(index + currentIndex) % gallery.length].description
             "
-            :startAutoPlay="false"
           />
         </div>
         <div class="gallery__toggle__page right">

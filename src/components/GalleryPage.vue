@@ -38,9 +38,9 @@ const gallery = ref([
       <div class="gallery__divider"></div>
       <div class="gallery__container__wrapper">
         <div class="gallery__toggle__page left">
-          <div class="gallery__icon-container">
+          <button class="gallery__icon-button">
             <i class="fa-solid fa-chevron-left"></i>
-          </div>
+          </button>
         </div>
         <div class="gallery__container container">
           <GallerySlider
@@ -53,9 +53,9 @@ const gallery = ref([
           />
         </div>
         <div class="gallery__toggle__page right">
-          <div class="gallery__icon-container">
+          <button class="gallery__icon-button">
             <i class="fa-solid fa-chevron-right"></i>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@ const gallery = ref([
     justify-content: flex-end;
   }
 
-  &__icon-container {
+  &__icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,6 +167,18 @@ const gallery = ref([
     color: $text;
     border-radius: 50%;
     cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+
+    &:hover {
+      border-radius: 50%;
+      scale: 1.1;
+    }
+
+    &:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
   }
 }
 </style>

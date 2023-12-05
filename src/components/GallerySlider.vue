@@ -22,6 +22,22 @@ const { image, title, description } = defineProps([
   width: 25%;
   margin: 0;
 
+  @media screen and (max-width: map-get($breakpoints, 'xl')) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    width: 100%;
+  }
+
   &__content {
     background-color: $light-color;
     border-radius: 10px;
@@ -46,6 +62,11 @@ const { image, title, description } = defineProps([
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 
   &__desc {
@@ -56,6 +77,16 @@ const { image, title, description } = defineProps([
     font-style: normal;
     font-weight: 400;
     padding-bottom: 30px;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      font-size: 16px;
+      padding: 0 12px 14px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      font-size: 16px;
+      padding: 0 14px 16px;
+    }
   }
 }
 </style>

@@ -92,7 +92,19 @@ const toggleMobileNav = () => {
     margin: 0 auto;
     padding: 56px auto 0;
 
+    @media screen and (max-width: map-get($breakpoints, 'xl')) {
+      padding: 0 20px 0;
+    }
+
     @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      padding: 0 20px 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 0 20px 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
       padding: 0 20px 0;
     }
   }

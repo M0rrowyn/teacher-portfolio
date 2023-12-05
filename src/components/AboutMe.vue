@@ -44,9 +44,23 @@
   display: flex;
   margin: 52px auto 0;
 
+  @media screen and (max-width: map-get($breakpoints, 'xl')) {
+    padding: 0px 12px;
+    margin: 32px auto 10px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'lg')) {
+    padding: 0px 12px;
+    margin: 32px auto 10px;
+  }
+
   @media screen and (max-width: map-get($breakpoints, 'md')) {
     padding: 0px 12px;
     margin: 32px auto 10px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    flex-direction: column;
   }
 
   &__content {
@@ -55,9 +69,24 @@
     background-color: $light-color;
     border-radius: 10px;
 
+    @media screen and (max-width: map-get($breakpoints, 'xl')) {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      flex-direction: row;
+      gap: 20px;
+    }
+
     @media screen and (max-width: map-get($breakpoints, 'md')) {
       flex-direction: column;
-      gap: 40px;
+      gap: 10px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      flex-direction: column;
+      gap: 10px;
     }
   }
 
@@ -70,7 +99,17 @@
       opacity: 0.8;
     }
 
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      width: 50%;
+      object-fit: cover;
+    }
+
     @media screen and (max-width: map-get($breakpoints, 'md')) {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
       width: 100%;
       object-fit: cover;
     }
@@ -90,6 +129,13 @@
       padding: 0 30px;
     }
 
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+    }
+
     &__title {
       margin: 0;
       padding: 70px 0 24px;
@@ -100,7 +146,17 @@
       line-height: 120%;
       color: $text;
 
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        padding: 20px 0 12px;
+        font-size: 24px;
+      }
+
       @media screen and (max-width: map-get($breakpoints, 'md')) {
+        padding: 30px 0 12px;
+        font-size: 26px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'lg')) {
         padding: 30px 0 12px;
         font-size: 28px;
       }
@@ -118,8 +174,19 @@
       flex-direction: column;
       margin: 0 auto 100px;
 
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        padding: 0 12px 0;
+        margin: 0 auto 40px;
+      }
+
       @media screen and (max-width: map-get($breakpoints, 'md')) {
+        padding: 0 14px 0;
         margin: 0 auto 50px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'lg')) {
+        padding: 0 16px 0;
+        margin: 0 auto 60px;
       }
     }
 
@@ -129,6 +196,21 @@
       font-style: normal;
       font-weight: 400;
       color: $text-divider;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      padding: 20px 0 10px;
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 20px 0 10px;
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      padding: 20px 0 10px;
+      font-size: 30px;
     }
   }
 }

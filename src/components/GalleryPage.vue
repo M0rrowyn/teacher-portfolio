@@ -69,6 +69,14 @@ const gallery = ref([
   justify-content: center;
   margin: 52px auto 0;
 
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    margin: 32px auto 0;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    margin: 36px auto 0;
+  }
+
   &__content {
     width: 100%;
   }
@@ -83,6 +91,12 @@ const gallery = ref([
     font-weight: 600;
     line-height: 120%;
     color: $text;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      padding: 0 0 14px;
+      font-size: 28px;
+      font-weight: 500;
+    }
   }
 
   &__divider {
@@ -95,13 +109,32 @@ const gallery = ref([
   &__container__wrapper {
     display: flex;
     align-items: center;
-    height: 100%;
   }
 
   &__container {
     display: flex;
     gap: 10px;
     flex-grow: 1;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'xl')) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &__wrapper {
       position: relative;

@@ -1,17 +1,31 @@
 <script setup>
+import { ref } from 'vue';
 const { image, title, description } = defineProps([
   'image',
   'title',
   'description'
 ]);
+
+const modalOpen = ref(false);
+
+const openModal = () => {
+  modalOpen.value = true;
+};
+
+const closeModal = () => {
+  modalOpen.value = false;
+};
 </script>
 
 <template>
   <div class="gallery__slider">
-    <div class="gallery__slider__content">
+    <div @click="openModal" class="gallery__slider__content">
       <img class="gallery__slider__image" :src="image" :alt="title" />
       <h4 class="gallery__slider__title">{{ title }}</h4>
       <p class="gallery__slider__desc">{{ description }}</p>
+    </div>
+    <div v-if="modalOpen" class="modal" @click="closeModal">
+      <img class="modal__image" :src="image" :alt="title" />
     </div>
   </div>
 </template>
@@ -86,6 +100,25 @@ const { image, title, description } = defineProps([
     @media screen and (max-width: map-get($breakpoints, 'md')) {
       font-size: 16px;
       padding: 0 14px 16px;
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &__image {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
     }
   }
 }

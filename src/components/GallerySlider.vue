@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+const emit = defineEmits(['closeModal', 'openModal'])
 const { image, title, description } = defineProps([
   'image',
   'title',
@@ -10,10 +11,12 @@ const modalOpen = ref(false);
 
 const openModal = () => {
   modalOpen.value = true;
+  emit('openModal')
 };
 
 const closeModal = () => {
   modalOpen.value = false;
+  emit('closeModal')
 };
 </script>
 
@@ -116,8 +119,8 @@ const closeModal = () => {
     cursor: pointer;
 
     &__image {
-      max-width: 80%;
-      max-height: 80%;
+      width: 30%;
+      height: 30%;
       object-fit: contain;
     }
   }

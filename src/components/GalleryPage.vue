@@ -31,7 +31,6 @@ const gallery = ref([
 ]);
 
 const currentIndex = ref(0);
-const autoPlayEnabled = ref(true);
 
 const getCurrentItem = (index) => {
   return gallery[(index + currentIndex.value) % gallery.value.length];
@@ -54,15 +53,17 @@ watchEffect(() => {
   }
 });
 
-watchEffect(() => {
-  if (autoPlayEnabled.value) {
-    const autoplayInterval = setInterval(() => {
+const interval = ref()
+const setAutoPlayInterval = () => {
+  interval.value = setInterval(() => {
       nextImage();
     }, 4000);
+}
+const clearAutoPlayInterval = () => {
+  clearInterval(interval.value)
+}
 
-    return () => clearInterval(autoplayInterval);
-  }
-});
+setAutoPlayInterval()
 </script>
 
 <template>
@@ -86,6 +87,8 @@ watchEffect(() => {
             :description="
               gallery[(index + currentIndex) % gallery.length].description
             "
+            @open-modal="clearAutoPlayInterval"
+            @close-modal="setAutoPlayInterval"
           />
         </div>
         <div class="gallery__toggle__page right">

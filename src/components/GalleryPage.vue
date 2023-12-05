@@ -1,6 +1,6 @@
 <script setup>
 import GallerySlider from './GallerySlider.vue';
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 
 const gallery = ref([
   {
@@ -29,6 +29,29 @@ const gallery = ref([
     description: 'Ullamco laboris nisi ut aliquip ex ea commodo consequat. '
   }
 ]);
+
+const currentIndex = ref(0);
+
+const getCurrentItem = (index) => {
+  return gallery[(index + currentIndex.value) % gallery.value.length];
+};
+
+const prevImage = () => {
+  currentIndex.value =
+    (currentIndex.value - 1 + gallery.value.length) % gallery.value.length;
+};
+
+const nextImage = () => {
+  currentIndex.value = (currentIndex.value + 1) % gallery.value.length;
+};
+
+watchEffect(() => {
+  if (currentIndex.value < 0) {
+    currentIndex.value = gallery.value.length - 1;
+  } else if (currentIndex.value >= gallery.value.length) {
+    currentIndex.value = 0;
+  }
+});
 </script>
 
 <template>
@@ -38,7 +61,7 @@ const gallery = ref([
       <div class="gallery__divider"></div>
       <div class="gallery__container__wrapper">
         <div class="gallery__toggle__page left">
-          <button class="gallery__icon-button">
+          <button @click="prevImage" class="gallery__icon-button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
         </div>
@@ -46,14 +69,16 @@ const gallery = ref([
           <GallerySlider
             v-for="(item, index) in gallery"
             :key="index"
-            :item="item"
-            :image="item.image"
-            :title="item.title"
-            :description="item.description"
+            :item="getCurrentItem(index)"
+            :image="gallery[(index + currentIndex) % gallery.length].image"
+            :title="gallery[(index + currentIndex) % gallery.length].title"
+            :description="
+              gallery[(index + currentIndex) % gallery.length].description
+            "
           />
         </div>
         <div class="gallery__toggle__page right">
-          <button class="gallery__icon-button">
+          <button @click="nextImage" class="gallery__icon-button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>

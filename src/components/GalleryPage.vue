@@ -31,6 +31,7 @@ const gallery = ref([
 ]);
 
 const currentIndex = ref(0);
+const autoPlayEnabled = ref(true);
 
 const getCurrentItem = (index) => {
   return gallery[(index + currentIndex.value) % gallery.value.length];
@@ -50,6 +51,16 @@ watchEffect(() => {
     currentIndex.value = gallery.value.length - 1;
   } else if (currentIndex.value >= gallery.value.length) {
     currentIndex.value = 0;
+  }
+});
+
+watchEffect(() => {
+  if (autoPlayEnabled.value) {
+    const autoplayInterval = setInterval(() => {
+      nextImage();
+    }, 5000);
+
+    return () => clearInterval(autoplayInterval);
   }
 });
 </script>
@@ -75,6 +86,7 @@ watchEffect(() => {
             :description="
               gallery[(index + currentIndex) % gallery.length].description
             "
+            :startAutoPlay="false"
           />
         </div>
         <div class="gallery__toggle__page right">

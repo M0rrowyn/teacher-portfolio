@@ -94,6 +94,7 @@ const closeModal = () => {
     font-style: normal;
     font-weight: 400;
     padding-bottom: 30px;
+    margin: 0;
 
     @media screen and (max-width: map-get($breakpoints, 'sm')) {
       font-size: 16px;

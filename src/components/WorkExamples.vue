@@ -36,17 +36,29 @@ const changeTab = (tabName) => {
       <div class="work-examples__divider"></div>
       <p class="work-examples__desc">Lorem ipsum dolor sit amet</p>
       <TabView :names="tabs" :selectedTab="selectedTab" @changeTab="changeTab">
-        <div v-if="selectedTab === 'Header I'">
-          Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <div class="work-examples__content" v-if="selectedTab === 'Header I'">
+          <h3 class="work-examples__content__title">Title I</h3>
+          <p class="work-examples__content__about">
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </div>
         <div v-if="selectedTab === 'Header II'">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          <h3 class="work-examples__content__title">Title II</h3>
+          <p class="work-examples__content__about">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
         </div>
         <div v-if="selectedTab === 'Header III'">
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <h3 class="work-examples__content__title">Title III</h3>
+          <p class="work-examples__content__about">
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
         </div>
         <div v-if="selectedTab === 'Header IV'">
-          Ut enim ad minim veniam, quis nostrud exercitation
+          <h3 class="work-examples__content__title">Title IV</h3>
+          <p class="work-examples__content__about">
+            Ut enim ad minim veniam, quis nostrud exercitation
+          </p>
         </div>
       </TabView>
     </div>
@@ -89,6 +101,28 @@ const changeTab = (tabName) => {
     font-weight: 400;
     line-height: 149.487%;
     color: $text-divider;
+  }
+
+  &__content {
+    margin: 0;
+
+    &__content__title {
+      color: $dark-color;
+      font-family: $base-font;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    &__content__about {
+      font-family: $base-font;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 149.487%;
+      color: $text-divider;
+    }
   }
 }
 </style>

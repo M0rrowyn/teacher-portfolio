@@ -90,12 +90,29 @@ const toggleMobileNav = () => {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 56px 24px;
+    padding: 56px auto 0;
+
+    @media screen and (max-width: map-get($breakpoints, 'xl')) {
+      padding: 0 20px 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      padding: 0 20px 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 0 20px 0;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      padding: 0 20px 0;
+    }
   }
 
   &__content__logo {
     display: flex;
     align-items: center;
+
     @media screen and (max-width: map-get($breakpoints, 'lg')) {
       max-width: 150px;
     }
@@ -106,7 +123,7 @@ const toggleMobileNav = () => {
       display: flex;
       flex-direction: row;
       position: relative;
-      margin-right: 40px;
+      // margin-right: 40px;
       padding: 12px 0;
       transition: all 0.3s;
 

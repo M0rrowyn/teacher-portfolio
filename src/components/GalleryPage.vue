@@ -153,6 +153,18 @@ const handleResize = () => {
       font-size: 28px;
       font-weight: 500;
     }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 0 0 18px;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      padding: 0 0 24px;
+      font-size: 32px;
+      font-weight: 500;
+    }
   }
 
   &__divider {
@@ -165,6 +177,13 @@ const handleResize = () => {
   &__container__wrapper {
     display: flex;
     align-items: center;
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 0px 12px 0px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      padding: 0px 12px 0px;
+    }
   }
 
   &__container {

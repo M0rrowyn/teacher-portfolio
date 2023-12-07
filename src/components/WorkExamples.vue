@@ -1,5 +1,6 @@
 <script setup>
 import TabView from '../components/TabView.vue';
+import DownloadPdfLink from './DownloadPdfLink.vue';
 
 import { ref } from 'vue';
 
@@ -41,24 +42,28 @@ const changeTab = (tabName) => {
           <p class="work-examples__content__about">
             Ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
+          <DownloadPdfLink />
         </div>
         <div v-if="selectedTab === 'Header II'">
           <h3 class="work-examples__content__title">Title II</h3>
           <p class="work-examples__content__about">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
+          <DownloadPdfLink />
         </div>
         <div v-if="selectedTab === 'Header III'">
           <h3 class="work-examples__content__title">Title III</h3>
           <p class="work-examples__content__about">
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
+          <DownloadPdfLink />
         </div>
         <div v-if="selectedTab === 'Header IV'">
           <h3 class="work-examples__content__title">Title IV</h3>
           <p class="work-examples__content__about">
             Ut enim ad minim veniam, quis nostrud exercitation
           </p>
+          <DownloadPdfLink />
         </div>
       </TabView>
     </div>

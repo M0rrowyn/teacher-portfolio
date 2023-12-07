@@ -78,6 +78,14 @@ const changeTab = (tabName) => {
   justify-content: center;
   margin: 52px auto 30px;
 
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    margin: 32px auto 12px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    margin: 36px auto 14px;
+  }
+
   &__title {
     margin: 0;
     text-align: center;
@@ -88,6 +96,19 @@ const changeTab = (tabName) => {
     font-weight: 600;
     line-height: 120%;
     color: $text;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      padding: 0 0 14px;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 0 0 18px;
+      font-size: 30px;
+      font-weight: 500;
+    }
   }
 
   &__divider {
@@ -95,6 +116,14 @@ const changeTab = (tabName) => {
     height: 2px;
     margin: 0 auto 24px;
     background-color: $text-divider;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      margin: 0 auto 16px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      margin: 0 auto 18px;
+    }
   }
 
   &__desc {
@@ -106,10 +135,40 @@ const changeTab = (tabName) => {
     font-weight: 400;
     line-height: 149.487%;
     color: $text-divider;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      margin: 0 auto 26px;
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      margin: 0 auto 24px;
+      font-size: 16px;
+    }
   }
 
   &__content {
     margin: 0;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      margin: 12px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      margin: 14px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      margin: 16px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'xl')) {
+      margin: 18px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'xxl')) {
+      margin: 20px;
+    }
 
     &__content__title {
       color: $dark-color;
@@ -118,6 +177,14 @@ const changeTab = (tabName) => {
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        font-size: 18px;
+      }
     }
 
     &__content__about {
@@ -127,6 +194,10 @@ const changeTab = (tabName) => {
       font-weight: 400;
       line-height: 149.487%;
       color: $text-divider;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      font-size: 16px;
     }
   }
 }

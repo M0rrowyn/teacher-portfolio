@@ -55,7 +55,6 @@ const clickOnTab = (tabName) => {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       cursor: pointer;
-      // border: 1px solid $accent-color;
       font-family: $base-font;
       color: $text;
       background: $accent-color;
@@ -72,6 +71,20 @@ const clickOnTab = (tabName) => {
         background: $light-color;
         color: $text;
       }
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        height: 60px;
+        width: 22.5%;
+        padding: 0 20px;
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        height: 72px;
+        width: 22.5%;
+        padding: 0 26px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -80,6 +93,16 @@ const clickOnTab = (tabName) => {
     background-color: $light-color;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      padding: 24px;
+      text-align: center;
+    }
   }
 }
 </style>

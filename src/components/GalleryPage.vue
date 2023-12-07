@@ -1,6 +1,6 @@
 <script setup>
 import GallerySlider from './GallerySlider.vue';
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect, onMounted, onBeforeUnmount } from 'vue';
 
 const gallery = ref([
   {
@@ -53,17 +53,34 @@ watchEffect(() => {
   }
 });
 
-const interval = ref()
+const interval = ref();
 const setAutoPlayInterval = () => {
   interval.value = setInterval(() => {
-      nextImage();
-    }, 4000);
-}
+    nextImage();
+  }, 4000);
+};
 const clearAutoPlayInterval = () => {
-  clearInterval(interval.value)
-}
+  clearInterval(interval.value);
+};
 
-setAutoPlayInterval()
+setAutoPlayInterval();
+
+const showLeftButton = ref(true);
+const showRightButton = ref(true);
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
+});
+
+const handleResize = () => {
+  const screenWidth = window.innerWidth;
+  showLeftButton.value = screenWidth > 992;
+  showRightButton.value = screenWidth > 992;
+};
 </script>
 
 <template>
@@ -72,7 +89,7 @@ setAutoPlayInterval()
       <h2 class="gallery__title">Gallery</h2>
       <div class="gallery__divider"></div>
       <div class="gallery__container__wrapper">
-        <div class="gallery__toggle__page left">
+        <div class="gallery__toggle__page left" v-if="showLeftButton">
           <button @click="prevImage" class="gallery__icon-button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
@@ -91,7 +108,7 @@ setAutoPlayInterval()
             @close-modal="setAutoPlayInterval"
           />
         </div>
-        <div class="gallery__toggle__page right">
+        <div class="gallery__toggle__page right" v-if="showRightButton">
           <button @click="nextImage" class="gallery__icon-button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>

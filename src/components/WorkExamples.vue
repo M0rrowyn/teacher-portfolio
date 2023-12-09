@@ -76,7 +76,7 @@ const changeTab = (tabName) => {
 .work-examples {
   display: flex;
   justify-content: center;
-  margin: 52px auto 30px;
+  margin: 52px auto 0px;
 
   @media screen and (max-width: map-get($breakpoints, 'sm')) {
     margin: 32px auto 12px;

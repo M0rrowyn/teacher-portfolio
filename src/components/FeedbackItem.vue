@@ -48,13 +48,17 @@ const isCenter = computed(() => props.position === 'center');
 
   &__left {
     background-color: $light-blue;
-    background: linear-gradient(to left, rgba(237,241,247, 0.5), transparent);
+    background: linear-gradient(to left, rgba(237, 241, 247, 0.5), transparent);
     color: rgba(0, 0, 0, 0.4);
   }
 
   &__right {
     background-color: $light-blue;
-    background: linear-gradient(to right, rgba(237,241,247, 0.5), transparent);
+    background: linear-gradient(
+      to right,
+      rgba(237, 241, 247, 0.5),
+      transparent
+    );
     color: rgba(0, 0, 0, 0.4);
   }
 

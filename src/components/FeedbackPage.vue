@@ -1,5 +1,23 @@
 <script setup>
 import FeedbackItem from './FeedbackItem.vue';
+
+import { ref } from 'vue';
+
+const currentIndex = ref(0);
+
+const prevFeedback = () => {
+  currentIndex.value = (currentIndex.value - 1 + 3) % 3;
+};
+
+const nextFeedback = () => {
+  currentIndex.value = (currentIndex.value + 1) % 3;
+};
+
+const getPosition = (index) => {
+  const positions = ['left', 'center', 'right'];
+  const adjustedIndex = (currentIndex.value + index) % 3;
+  return positions[adjustedIndex];
+};
 </script>
 
 <template>
@@ -11,19 +29,19 @@ import FeedbackItem from './FeedbackItem.vue';
       <div class="feedback__content__divider"></div>
       <p class="feedback__content__about">Lorem ipsum dolor sit ame</p>
       <div class="feedback__content__wrapper">
-        <FeedbackItem position="left" />
+        <FeedbackItem :position="getPosition(0)" />
         <div class="feedback__content__wrapper__toggle left">
           <button @click="prevFeedback" class="feedback__icon-button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
         </div>
-        <FeedbackItem position="center" />
+        <FeedbackItem :position="getPosition(1)" />
         <div class="feedback__content__wrapper__toggle right">
           <button @click="nextFeedback" class="feedback__icon-button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
-        <FeedbackItem position="right" />
+        <FeedbackItem :position="getPosition(2)" />
       </div>
     </div>
   </section>

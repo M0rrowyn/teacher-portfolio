@@ -18,7 +18,6 @@ const isCenter = computed(() => props.position === 'center');
   >
     <div
       class="feedback__item__content"
-      :style="{ backgroundColor: feedbackItemColor }"
     >
       <img
         v-if="isCenter"

@@ -72,6 +72,27 @@ const isCenter = computed(() => props.position === 'center');
     top: -28px;
     right: 30px;
     z-index: 1;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      width: 50px; 
+      height: auto; 
+      top: -14px; 
+      right: 15px; 
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      width: 50px; 
+      height: auto; 
+      top: -14px; 
+      right: 15px; 
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      width: 80px; 
+      height: auto; 
+      top: -14px; 
+      right: 15px; 
+    }
   }
 }
 </style>

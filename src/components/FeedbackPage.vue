@@ -1,7 +1,7 @@
 <script setup>
 import FeedbackItem from './FeedbackItem.vue';
 
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const currentIndex = ref(0);
 
@@ -18,6 +18,23 @@ const getPosition = (index) => {
   const adjustedIndex = (currentIndex.value + index) % 3;
   return positions[adjustedIndex];
 };
+
+const showPrevButton = ref(true);
+const showNextButton = ref(true);
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
+});
+
+const handleResize = () => {
+  const screenWidth = window.innerWidth;
+  showPrevButton.value = screenWidth > 992;
+  showNextButton.value = screenWidth > 992;
+};
 </script>
 
 <template>
@@ -30,13 +47,19 @@ const getPosition = (index) => {
       <p class="feedback__content__about">Lorem ipsum dolor sit ame</p>
       <div class="feedback__content__wrapper">
         <FeedbackItem :position="getPosition(0)" />
-        <div class="feedback__content__wrapper__toggle left">
+        <div
+          class="feedback__content__wrapper__toggle left"
+          v-if="showPrevButton"
+        >
           <button @click="prevFeedback" class="feedback__content__icon__button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
         </div>
         <FeedbackItem :position="getPosition(1)" />
-        <div class="feedback__content__wrapper__toggle right">
+        <div
+          class="feedback__content__wrapper__toggle right"
+          v-if="showNextButton"
+        >
           <button @click="nextFeedback" class="feedback__content__icon__button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
@@ -55,8 +78,28 @@ const getPosition = (index) => {
   justify-content: center;
   margin: 52px auto 50px;
 
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
+    margin: 32px auto 12px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, 'md')) {
+    margin: 36px auto 14px;
+  }
+
   &__content {
     width: 100%;
+
+    @media screen and (max-width: map-get($breakpoints, 'sm')) {
+      margin: 20px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'md')) {
+      margin: 20px;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, 'lg')) {
+      margin: 20px;
+    }
 
     &__title {
       margin: 0;
@@ -68,6 +111,16 @@ const getPosition = (index) => {
       font-weight: 400;
       line-height: 120%;
       color: $text;
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        padding: 0 0 14px;
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        padding: 0 0 18px;
+        font-size: 30px;
+      }
     }
 
     &__divider {
@@ -75,6 +128,14 @@ const getPosition = (index) => {
       height: 2px;
       margin: 0 auto 24px;
       background-color: $text-divider;
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        margin: 0 auto 16px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        margin: 0 auto 18px;
+      }
     }
 
     &__about {
@@ -86,6 +147,16 @@ const getPosition = (index) => {
       font-weight: 400;
       line-height: 149.487%;
       color: $text-divider;
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        margin: 0 auto 24px;
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        margin: 0 auto 26px;
+        font-size: 16px;
+      }
     }
 
     &__wrapper {
@@ -93,6 +164,18 @@ const getPosition = (index) => {
       justify-content: center;
       gap: 20px;
       position: relative;
+
+      @media screen and (max-width: map-get($breakpoints, 'sm')) {
+        flex-direction: column;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'md')) {
+        flex-direction: column;
+      }
+
+      @media screen and (max-width: map-get($breakpoints, 'lg')) {
+        flex-direction: column;
+      }
 
       &__toggle {
         position: absolute;

@@ -30,28 +30,23 @@ Welcome to the Teacher's Portfolio project, a personalized web application craft
    git clone https://github.com/yourusername/teachers-portfolio.git
    ```
    
-2. Open the project in your preferred code editor
+2. Open the project in your preferred code editor.
   
 3. Install dependencies:
 
-  ```sh
-  npm install
-  ```
+   ```sh
+   npm install
+    ```
 
 4. Run the development server:
 
-  ```sh
-  npm run dev
-  ```
+    ```sh
+    npm run dev
+    ```
 5. Compile and Minify for Production
 
-  ```sh
-  npm run build
-  ```
+    ```sh
+    npm run build
+    ```
 
-6. Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
 

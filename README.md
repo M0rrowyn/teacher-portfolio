@@ -43,7 +43,7 @@ Welcome to the Teacher's Portfolio project, a personalized web application craft
     ```sh
     npm run dev
     ```
-5. Compile and Minify for Production
+5. Compile and Minify for Production:
 
     ```sh
     npm run build

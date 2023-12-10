@@ -31,13 +31,13 @@ const getPosition = (index) => {
       <div class="feedback__content__wrapper">
         <FeedbackItem :position="getPosition(0)" />
         <div class="feedback__content__wrapper__toggle left">
-          <button @click="prevFeedback" class="feedback__icon-button">
+          <button @click="prevFeedback" class="feedback__content__icon__button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
         </div>
         <FeedbackItem :position="getPosition(1)" />
         <div class="feedback__content__wrapper__toggle right">
-          <button @click="nextFeedback" class="feedback__icon-button">
+          <button @click="nextFeedback" class="feedback__content__icon__button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -108,31 +108,31 @@ const getPosition = (index) => {
         &.right {
           right: 31%;
         }
-
-        button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 54px;
-          height: 54px;
-          background-color: $accent-color;
-          color: $text;
-          border-radius: 50%;
-          cursor: pointer;
-          border: none;
-          transition: all 0.3s;
-        }
-
-        &:hover {
-          border-radius: 50%;
-          scale: 1.1;
-        }
-
-        &:active {
-          box-shadow: 0 5px #666;
-          transform: translateY(4px);
-        }
       }
+    }
+  }
+
+  .feedback__content__icon__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background-color: $accent-color;
+    color: $text;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+
+    &:hover {
+      border-radius: 50%;
+      scale: 1.1;
+    }
+
+    &:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
     }
   }
 }

@@ -46,25 +46,32 @@ const isCenter = computed(() => props.position === 'center');
   max-height: 100%;
   max-width: 100%;
 
-  &__left {
+  &__left,
+  &__right {
     background-color: $light-blue;
-    background: linear-gradient(to left, rgba(237, 241, 247, 0.5), transparent);
     color: rgba(0, 0, 0, 0.4);
   }
 
+  &__left {
+    background: linear-gradient(to left, rgba(245, 245, 245, 0.4), transparent);
+  }
+
   &__right {
-    background-color: $light-blue;
     background: linear-gradient(
       to right,
-      rgba(237, 241, 247, 0.5),
+      rgba(245, 245, 245, 0.4),
       transparent
     );
-    color: rgba(0, 0, 0, 0.4);
   }
 
   &__content {
     position: relative;
     padding: 42px 60px;
+  }
+
+  &__content.centered {
+    background-color: $light-color;
+    background: none;
   }
 
   &__img {
@@ -74,24 +81,24 @@ const isCenter = computed(() => props.position === 'center');
     z-index: 1;
 
     @media screen and (max-width: map-get($breakpoints, 'sm')) {
-      width: 50px; 
-      height: auto; 
-      top: -14px; 
-      right: 15px; 
+      width: 50px;
+      height: auto;
+      top: -14px;
+      right: 15px;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'md')) {
-      width: 50px; 
-      height: auto; 
-      top: -14px; 
-      right: 15px; 
+      width: 50px;
+      height: auto;
+      top: -14px;
+      right: 15px;
     }
 
     @media screen and (max-width: map-get($breakpoints, 'lg')) {
-      width: 80px; 
-      height: auto; 
-      top: -14px; 
-      right: 15px; 
+      width: 80px;
+      height: auto;
+      top: -14px;
+      right: 15px;
     }
   }
 }

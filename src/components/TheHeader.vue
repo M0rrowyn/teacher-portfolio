@@ -129,9 +129,7 @@ const toggleMobileNav = () => {
       display: flex;
       flex-direction: row;
       position: relative;
-      // margin-right: 40px;
-      padding: 12px 0;
-      transition: all 0.3s;
+
 
       @media (min-width: map-get($breakpoints, 'xxl')) {
         max-width: map-get($breakpoints, 'xxl');

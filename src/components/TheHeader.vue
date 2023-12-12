@@ -1,15 +1,26 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
 const mobile = ref(null);
+const showHeader = ref(true);
+const route = useRoute();
 
 const toggleMobileNav = () => {
   mobile.value = !mobile.value;
 };
+
+const shouldShowHeader = (route) => {
+  return route.name !== 'NotFound';
+};
+
+watch(route, (to) => {
+  showHeader.value = shouldShowHeader(to);
+});
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" v-if="showHeader">
     <div class="header__content container">
       <img
         class="header__content__logo"

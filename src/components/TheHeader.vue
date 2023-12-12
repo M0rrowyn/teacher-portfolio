@@ -45,36 +45,63 @@ const toggleMobileNav = () => {
             <router-link to="/#contact">Contact</router-link>
           </li>
         </ul>
-        <div class="header__nav__burger">
-          <i
-            @click="toggleMobileNav"
-            class="fa-solid fa-bars"
-            :class="{ 'icon-active': mobile }"
-          ></i>
-        </div>
-        <transition name="header__nav__mobile">
-          <ul v-show="mobile" class="header__nav__mobile__dropdown">
+      </nav>
+      <div class="header__nav__burger">
+        <i
+          @click="toggleMobileNav"
+          class="fa-solid fa-bars"
+          :class="{ 'icon-active': mobile }"
+        ></i>
+      </div>
+      <transition name="header__nav__mobile">
+        <nav v-if="mobile" class="header__nav__mobile__content">
+          <ul class="header__nav__mobile__dropdown">
             <li>
-              <router-link :to="{ name: 'main-page' }"> Home</router-link>
+              <router-link
+                :to="{ name: 'main-page' }"
+                class="header__nav__mobile__dropdown__links"
+              >
+                Home</router-link
+              >
             </li>
             <li>
-              <router-link to="/#about-me">About me</router-link>
+              <router-link
+                to="/#about-me"
+                class="header__nav__mobile__dropdown__links"
+                >About me</router-link
+              >
             </li>
             <li>
-              <router-link to="/#gallery">Gallery</router-link>
+              <router-link
+                to="/#gallery"
+                class="header__nav__mobile__dropdown__links"
+                >Gallery</router-link
+              >
             </li>
             <li>
-              <router-link to="/#work-examples">Work Examples</router-link>
+              <router-link
+                to="/#work-examples"
+                class="header__nav__mobile__dropdown__links"
+                >Work Examples</router-link
+              >
             </li>
             <li>
-              <router-link to="/#feedback">Feedback</router-link>
+              <router-link
+                to="/#feedback"
+                class="header__nav__mobile__dropdown__links"
+                >Feedback</router-link
+              >
             </li>
             <li>
-              <router-link to="/#contact">Contact</router-link>
+              <router-link
+                to="/#contact"
+                class="header__nav__mobile__dropdown__links"
+                >Contact</router-link
+              >
             </li>
           </ul>
-        </transition>
-      </nav>
+        </nav>
+      </transition>
     </div>
   </header>
 </template>
@@ -129,7 +156,6 @@ const toggleMobileNav = () => {
       display: flex;
       flex-direction: row;
       position: relative;
-
 
       @media (min-width: map-get($breakpoints, 'xxl')) {
         max-width: map-get($breakpoints, 'xxl');
@@ -200,48 +226,53 @@ const toggleMobileNav = () => {
       @media screen and (max-width: map-get($breakpoints, 'md')) {
         display: flex;
       }
+    }
+  }
 
-      &__nav__mobile__dropdown {
-        display: flex;
-        flex-direction: column;
-        margin: 12px 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        max-width: 250px;
-        background-color: $light-color;
+  &__nav__mobile__dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0 0 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    list-style: none;
+    background-color: $light-color;
 
-        li {
-          margin-left: 0;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          list-style: none;
-          font-size: 20px;
-          text-decoration: none;
-          transition: all 0.35s ease;
+    &__links {
+      margin-left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: $base-font;
+      font-size: 26px;
+      text-decoration: none;
+      transition: all 0.35s ease;
 
-          .link {
-            color: #000;
-          }
-        }
+      &:hover {
+        border-bottom: 2px solid $accent-color;
+        border-top: 2px solid $accent-color;
+        opacity: 0.7;
       }
+    }
 
-      &__mobile-enter-active,
-      &__nav__mobile-leave-active {
-        transition: 1s ease all;
-      }
+    &__mobile-enter-active,
+    &__nav__mobile-leave-active {
+      transition: 1s ease all;
+    }
 
-      &__nav__mobile-enter-from,
-      &__nav__mobile-leave-to {
-        transform: translateX(-250px);
-      }
+    &__nav__mobile-enter-from,
+    &__nav__mobile-leave-to {
+      transform: translateX(-250px);
+    }
 
-      &__nav__mobile-enter-to {
-        transform: translateX(0);
-      }
+    &__nav__mobile-enter-to {
+      transform: translateX(0);
     }
   }
 }
